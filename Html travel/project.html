@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedWine | The Vault</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .reveal-container {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .reveal-back {
+            position: absolute;
+            inset: 0;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .reveal-front {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .reveal-container:hover .reveal-front {
+            transform: translateY(-100%);
+        }
+
+        .red-gradient-text {
+            background: linear-gradient(to right, #ff0000, #7a0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pricing-scroll::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        .pricing-scroll::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+        
+        .pricing-scroll::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+        
+        .pricing-scroll::-webkit-scrollbar-thumb:hover {
+            background: #7a0000;
+        }
+        
+        .premium-card {
+            border: 2px solid #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        .premium-card:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+        
+        .basic-card,.luxury-card {
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+        
+        .nav__links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+        
+        .nav__links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        
+        .nav__links a:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+    <header class="fixed w-full z-50 bg-black/90 border-b border-red-900/30">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-3xl font-black text-red-600 italic">REDWINE</div>
+            
+            <ul class="nav__links hidden md:flex">
+                <li class="link"><a href="#">Home</a></li>
+                <li class="link"><a href="#">Destinations</a></li>
+                <li class="link"><a href="#">Packages</a></li>
+                <li class="link"><a href="#">Contact Us</a></li>
+            </ul>
+            
+            <div class="relative group">
+                <input type="text" placeholder="Search..." class="bg-zinc-900 border border-zinc-800 rounded-full py-1 px-8 focus:outline-none focus:border-red-600 transition-all w-40 group-hover:w-60">
+                <i class="fas fa-search absolute left-3 top-2.5 text-zinc-500 group-hover:text-red-600 transition-colors"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="h-[60vh] flex items-center justify-center pt-20">
+        <div class="text-center">
+            <h1 class="text-6xl font-black uppercase tracking-widest mb-2">The <span class="text-red-600">Vault</span></h1>
+            <p class="text-zinc-500 uppercase tracking-tighter">Explore the World With Us</p>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="reveal-container rounded-xl">
+                <div class="reveal-back">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">KOOMAPATTI</h3>
+                    <p class="text-zinc-400 text-sm mb-4">A serene, scenic village in the Virudhunagar district of Tamil Nadu, India, located in the Western Ghats foothills near Watrap.</p>
+                    <button class="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">Explore</button>
+                </div>
+                <div class="reveal-front" style="background-image: url('https://mukundhatoursandtravels.in/wp-content/uploads/2025/06/koomapatti-viral-village-769x1024.jpg')">
+                    <div class="absolute inset-0 bg-black/30 flex items-end p-6">
+                        <span class="text-xl font-black tracking-widest uppercase">Koomapatti</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-container rounded-xl">
+                <div class="reveal-back">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">DHANUSHKODI</h3>
+                    <p class="text-zinc-400 text-sm mb-4">An abandoned town at the south-eastern tip of Pamban Island of the state of Tamil Nadu in India.</p>
+                    <button class="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">Explore</button>
+                </div>
+                <div class="reveal-front" style="background-image: url('https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2024/08/02141704/Railway-line-1.jpg?tr=w-720,h-960')">
+                    <div class="absolute inset-0 bg-black/30 flex items-end p-6">
+                        <span class="text-xl font-black tracking-widest uppercase">Ghost Town</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-container rounded-xl">
+                <div class="reveal-back">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">KODAIKANAL</h3>
+                    <p class="text-zinc-400 text-sm mb-4">Navigate the Pillar Rocks and Coaker's Walk in the mist of the Princess of Hills.</p>
+                    <button class="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">Explore</button>
+                </div>
+                <div class="reveal-front" style="background-image: url('https://stampedmoments.com/wp-content/uploads/2025/06/panorama-kodaikanal-lake-landscape.jpg')">
+                    <div class="absolute inset-0 bg-black/30 flex items-end p-6">
+                        <span class="text-xl font-black tracking-widest uppercase">Kodaikanal</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="text-3xl font-bold mt-32 mb-12 text-center uppercase tracking-[0.3em] text-zinc-700">Extended Catalog</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="reveal-container rounded-xl">
+                <div class="reveal-back">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">Valparai</h3>
+                    <p class="text-zinc-400 text-sm mb-4">3,500 feet above sea level, home to tea estates and wild leopards.</p>
+                    <button class="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">Discover High-Altitude</button>
+                </div>
+                <div class="reveal-front" style="background-image: url('https://api.breakbag.com/storage/images/hotselling-valparai-tour-packa-lp6s1z9nh8iggr0u-1761388238506.webp')">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                        <span class="text-3xl font-black tracking-widest uppercase">Valparai</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal-container rounded-xl">
+                <div class="reveal-back">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">Ooty</h3>
+                    <p class="text-zinc-400 text-sm mb-4">The Queen of Hill Stations. Vintage toy trains and botanical wonders.</p>
+                    <button class="bg-red-600 text-white px-6 py-2 text-xs font-bold uppercase">Book Heritage Stay</button>
+                </div>
+                <div class="reveal-front" style="background-image: url('https://hblimg.mmtcdn.com/content/hubble/img/destimg/mmt/destination/m_Ooty_main_tv_destination_img_1_l_764_1269.jpg')">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-8">
+                        <span class="text-3xl font-black tracking-widest uppercase">Ooty</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--pricing-->
+    <section class="container mx-auto px-6 py-20 border-t border-red-900/30 bg-gradient-to-b from-black to-zinc-950">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black uppercase tracking-[0.2em] text-red-600 mb-2">Pricing</h2>
+            <p class="text-zinc-500 uppercase text-sm tracking-wider">Three tiers. One choice.</p>
+        </div>
+        
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-6xl mx-auto">
+            
+            <!--basic-->
+            <div class="basic-card w-80 bg-zinc-900 rounded-xl p-8 flex flex-col relative transition-all hover:scale-105">
+                <div class="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 text-xs font-bold uppercase rounded-bl-xl rounded-tr-xl">Basic</div>
+                <div class="mt-8 mb-6 text-center">
+                    <i class="fas fa-wine-glass-alt text-5xl text-red-600 mb-4"></i>
+                    <h3 class="text-3xl font-black uppercase tracking-wider">Basic</h3>
+                    <div class="flex items-end justify-center gap-1 mt-4">
+                        <span class="text-5xl font-black text-red-600">₹299</span>
+                        <span class="text-zinc-500 mb-1">/person</span>
+                    </div>
+                </div>
+                <div class="border-t border-zinc-800 pt-6 text-center text-zinc-400">
+                    <p class="text-sm">3 Days • Standard Stay • Breakfast</p>
+                </div>
+                <button class="w-full bg-red-600 text-white py-3 mt-6 rounded-full font-bold uppercase tracking-wider hover:bg-red-700 transition">
+                    Select
+                </button>
+            </div>
+            <!--preemium-->
+            <div class="premium-card w-80 bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-xl p-8 flex flex-col relative transition-all hover:scale-105">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-2 text-sm font-bold uppercase rounded-full flex items-center gap-2 whitespace-nowrap">
+                    <i class="fas fa-crown"></i> RECOMMENDED
+                </div>
+                <div class="mt-12 mb-6 text-center">
+                    <i class="fas fa-crown text-5xl text-blue-500 mb-4"></i>
+                    <h3 class="text-3xl font-black uppercase tracking-wider text-blue-400">Premium</h3>
+                    <div class="flex items-end justify-center gap-1 mt-4">
+                        <span class="text-5xl font-black text-blue-500">₹599</span>
+                        <span class="text-zinc-400 mb-1">/person</span>
+                    </div>
+                </div>
+                <div class="border-t border-blue-900/50 pt-6 text-center text-zinc-300">
+                    <p class="text-sm font-semibold">5 Days • Premium Resort • All Meals</p>
+                </div>
+                <button class="w-full bg-blue-600 text-white py-3 mt-6 rounded-full font-bold uppercase tracking-wider hover:bg-blue-700 transition shadow-lg shadow-blue-600/30">
+                    Select Premium
+                </button>
+            </div>
+            
+            <!--luxuary-->
+            <div class="luxury-card w-80 bg-zinc-900 rounded-xl p-8 flex flex-col relative transition-all hover:scale-105">
+                <div class="absolute top-0 right-0 bg-amber-700 text-white px-4 py-1 text-xs font-bold uppercase rounded-bl-xl rounded-tr-xl">Luxury</div>
+                <div class="mt-8 mb-6 text-center">
+                    <i class="fas fa-gem text-5xl text-amber-600 mb-4"></i>
+                    <h3 class="text-3xl font-black uppercase tracking-wider text-amber-500">Luxury</h3>
+                    <div class="flex items-end justify-center gap-1 mt-4">
+                        <span class="text-5xl font-black text-amber-600">₹999</span>
+                        <span class="text-zinc-500 mb-1">/person</span>
+                    </div>
+                </div>
+                <div class="border-t border-amber-900/30 pt-6 text-center text-zinc-400">
+                    <p class="text-sm">7 Days • 5-Star • VIP Experience</p>
+                </div>
+                <button class="w-full bg-amber-700 text-white py-3 mt-6 rounded-full font-bold uppercase tracking-wider hover:bg-amber-800 transition">
+                    Select
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 border-t border-red-900/50 py-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="text-2xl font-black text-red-600 uppercase mb-2">RedWine Agency</h4>
+                <p class="text-zinc-500 mb-4">The Luxury of the Unknown.</p>
+                <div class="flex items-center justify-center md:justify-start gap-3 text-zinc-400">
+                    <i class="fas fa-envelope text-red-600"></i>
+                    <span>contractornesamani@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="flex space-x-8 text-3xl">
+                <a href="#" class="text-zinc-500 hover:text-red-600 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-zinc-500 hover:text-red-600 transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-zinc-500 hover:text-red-600 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-zinc-500 hover:text-red-600 transition"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-zinc-800 text-[10px] mt-12 tracking-[0.5em] uppercase font-bold">
+            &copy; Since 1969 | Trusted 67th Agency
+        </div>
+    </footer>
+
+</body>
+</html>
